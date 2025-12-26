@@ -5,14 +5,15 @@ import Image from "next/image";
 import { products } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 
-const CATEGORIES = ["All", "Beverages", "Spices", "Grains", "Organic"];
+const FILTERS = ["All", "Gemsip", "GemJeera", "Gemneer", "Gemberg", "Gem Chips"];
 
 export default function ProductsPage() {
-    const [activeCategory, setActiveCategory] = useState("All");
+    const [activeFilter, setActiveFilter] = useState("All");
 
-    const filteredProducts = activeCategory === "All"
+    const filteredProducts = activeFilter === "All"
         ? products
-        : products.filter(p => p.category.includes(activeCategory) || (activeCategory === "Organic" && p.name.includes("Organic")));
+        : products.filter(p => p.brand === activeFilter || (activeFilter === "Gemberg" && p.brand === "Gemberg") || (activeFilter === "Gem Chips" && p.brand === "Gem Chips"));
+
 
     return (
         <div className="bg-cream min-h-screen pt-24 pb-24">
@@ -27,16 +28,16 @@ export default function ProductsPage() {
             {/* Filters */}
             <div className="container mx-auto px-6 mb-12 overflow-x-auto">
                 <div className="flex justify-center min-w-max gap-4 p-2">
-                    {CATEGORIES.map(cat => (
+                    {FILTERS.map(filter => (
                         <button
-                            key={cat}
-                            onClick={() => setActiveCategory(cat)}
-                            className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest transition-all ${activeCategory === cat
-                                    ? "bg-primary text-secondary-light"
-                                    : "bg-white text-primary border border-primary/10 hover:border-primary"
+                            key={filter}
+                            onClick={() => setActiveFilter(filter)}
+                            className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest transition-all ${activeFilter === filter
+                                ? "bg-primary text-secondary-light shadow-lg scale-105"
+                                : "bg-white text-primary border border-primary/10 hover:border-primary hover:bg-primary/5"
                                 }`}
                         >
-                            {cat}
+                            {filter}
                         </button>
                     ))}
                 </div>
@@ -54,7 +55,7 @@ export default function ProductsPage() {
                                 className="object-cover group-hover:scale-110 transition-transform duration-700"
                             />
                             <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide">
-                                {product.category}
+                                {product.brand}
                             </div>
                         </div>
                         <div className="p-8 space-y-4">

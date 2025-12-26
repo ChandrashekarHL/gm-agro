@@ -37,26 +37,25 @@ export const HeroSection = () => {
                 <div ref={leftColRef} className="space-y-8 z-10">
                     <div className="space-y-2">
                         <span className="text-secondary font-bold uppercase tracking-[0.2em] text-xs">
-                            Premium Agri-Products
+                            Taste the Real
                         </span>
                         <h1 className="font-serif text-5xl md:text-7xl leading-[1.1] text-primary">
-                            Nurturing <br />
+                            Real Fruit. <br />
                             <span className="italic relative inline-block">
-                                Nature's
+                                Real Fizz.
                                 <span className="absolute bottom-2 left-0 w-full h-1 bg-secondary/30 -z-10"></span>
                             </span>
-                            <br /> Finest.
                         </h1>
                     </div>
 
                     <p className="text-primary/70 text-lg md:text-xl max-w-md font-light leading-relaxed">
-                        From the heart of the earth to your home. We deliver purity,
-                        sustainability, and unmatched quality in every grain.
+                        From the heritage farms of Davanagere to your hands. Experience the
+                        purity of <strong>Gemsip</strong> and the sparkling refreshment of <strong>Gemberg</strong>.
                     </p>
 
                     <div className="flex flex-wrap gap-4 pt-4">
                         <Button size="lg" variant="primary">
-                            Discover Products
+                            Explore Flavors
                         </Button>
                         <Button size="lg" variant="outline" className="gap-2">
                             <Play size={16} className="fill-current" /> Watch Story
@@ -69,16 +68,16 @@ export const HeroSection = () => {
                     <div className="relative w-full h-[500px] md:h-[600px] bg-primary/5 rounded-2xl overflow-hidden shadow-2xl border border-primary/10">
                         {/* Main Image */}
                         <Image
-                            src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2671&auto=format&fit=crop"
+                            src="https://images.unsplash.com/photo-1546173159-315724a31696?q=80&w=2574&auto=format&fit=crop"
                             fill
-                            alt="Agricultural Landscape"
+                            alt="Fresh Mangoes and Juice"
                             className="object-cover opacity-90 hover:scale-105 transition-transform duration-1000"
                         />
 
                         {/* Floating Badge */}
                         <div className="absolute top-8 right-8 bg-white/90 backdrop-blur p-4 rounded-xl shadow-lg max-w-[150px]">
                             <p className="font-serif text-3xl font-bold text-primary">100%</p>
-                            <p className="text-xs text-primary/70 uppercase tracking-widest mt-1">Organic Sourced</p>
+                            <p className="text-xs text-primary/70 uppercase tracking-widest mt-1">Real Pulp</p>
                         </div>
 
                         {/* Stylized Grid Overlay (from reference) */}

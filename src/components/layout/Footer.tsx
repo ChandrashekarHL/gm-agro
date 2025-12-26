@@ -27,7 +27,6 @@ export const Footer = () => {
                         <h3 className="font-serif text-lg font-bold mb-8 text-secondary tracking-wide">Company</h3>
                         <ul className="space-y-4 text-cream/80">
                             <li><Link href="/about" className="hover:text-white hover:translate-x-1 inline-block transition-all">Our Story</Link></li>
-                            <li><Link href="/sustainability" className="hover:text-white hover:translate-x-1 inline-block transition-all">Sustainability</Link></li>
                             <li><Link href="/careers" className="hover:text-white hover:translate-x-1 inline-block transition-all">Careers</Link></li>
                             <li><Link href="/contact" className="hover:text-white hover:translate-x-1 inline-block transition-all">Contact Us</Link></li>
                         </ul>
