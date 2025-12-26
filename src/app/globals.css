@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Editorial Premium Palette */
+  --color-primary: #0D2D24;  /* Deep Jungle Green */
+  --color-primary-light: #1A3C34;
+  
+  --color-secondary: #C8A366; /* Muted Gold */
+  --color-secondary-light: #F0E6D2; /* Light Beige for accents */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-cream: #F2F0E9;    /* Paper/Warm Beige - MAIN BG */
+  --color-paper: #F9F8F4;    /* Lighter section BG */
+  
+  --color-surface: #FFFFFF;
+  --color-charcoal: #1C1C1C;
+  
+  --color-border: #1A3C34;   /* Dark borders for grid lines */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-playfair);
+
+  --animate-fade-in: fadeIn 1s ease-out forwards;
+  --animate-slide-up: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
   }
 }
 
+/* Base Styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500; /* Regular to Medium for editorial look */
+}
+
+/* Subtle Grid Background Utility */
+@utility bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(26, 60, 52, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(26, 60, 52, 0.05) 1px, transparent 1px);
 }
