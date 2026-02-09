@@ -38,6 +38,66 @@
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
+
+  /* Product-Specific Colors for Storytelling */
+  --color-gemsip-mango: #FF9933;
+  --color-gemsip-apple: #8BC34A;
+  --color-gemsip-guava: #E91E63;
+
+  --color-gemberg-cola: #3E2723;
+  --color-gemberg-orange: #FF5722;
+  --color-gemberg-lemon: #CDDC39;
+
+  --color-gemneer-blue: #03A9F4;
+  --color-gem-chips-gold: #FFC107;
+
+  /* Storytelling Gradients */
+  --gradient-heritage: linear-gradient(135deg, #8B7355 0%, #D4C4B0 100%);
+  --gradient-innovation: linear-gradient(135deg, #FF9933 0%, #FF5722 50%, #E91E63 100%);
+  --gradient-future: linear-gradient(135deg, #8BC34A 0%, #03A9F4 100%);
+
+  /* Wave Animation */
+  --animate-wave: wave 8s ease-in-out infinite;
+  @keyframes wave {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Fish Swimming Animation */
+  --animate-swim: swim 15s linear infinite;
+  @keyframes swim {
+    from { transform: translateX(-100px); }
+    to { transform: translateX(calc(100vw + 100px)); }
+  }
+
+  /* Fizz Bubbles Animation */
+  --animate-bubble: bubble 3s ease-in-out infinite;
+  @keyframes bubble {
+    0% { transform: translateY(0) scale(1); opacity: 0.7; }
+    50% { transform: translateY(-20px) scale(1.1); opacity: 1; }
+    100% { transform: translateY(-40px) scale(0.8); opacity: 0; }
+  }
+
+  /* Slow Spin for Badge */
+  --animate-spin-slow: spin-slow 20s linear infinite;
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Float Animation for Cards */
+  --animate-float: float 3s ease-in-out infinite;
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Slide In from Left */
+  --animate-slide-in-left: slideInLeft 0.8s ease-out;
+  @keyframes slideInLeft {
+    from { transform: translateX(-30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
 }
 
 /* Base Styles */

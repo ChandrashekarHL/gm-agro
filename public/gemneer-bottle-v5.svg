@@ -1,0 +1,58 @@
+<svg width="300" height="600" viewBox="0 0 300 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Matte Bottle Body Gradient -->
+        <linearGradient id="matteBody" x1="150" y1="50" x2="150" y2="580" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#Ffffff" stop-opacity="0.95"/>
+            <stop offset="0.3" stop-color="#E0F7FA" stop-opacity="0.85"/>
+            <stop offset="0.8" stop-color="#B2EBF2" stop-opacity="0.9"/>
+            <stop offset="1" stop-color="#80DEEA" stop-opacity="0.95"/>
+        </linearGradient>
+
+        <!-- Soft Shadow for 3D effect -->
+        <radialGradient id="softShadow" cx="50%" cy="50%" r="50%" fx="20%" fy="50%">
+            <stop offset="0%" stop-color="#006064" stop-opacity="0.1"/>
+            <stop offset="100%" stop-color="#006064" stop-opacity="0.0"/>
+        </radialGradient>
+
+        <!-- White Highlight for matte plastic feel -->
+        <linearGradient id="highlight" x1="100" y1="50" x2="120" y2="580" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="white" stop-opacity="0.4"/>
+            <stop offset="1" stop-color="white" stop-opacity="0.1"/>
+        </linearGradient>
+        
+        <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+        </filter>
+    </defs>
+
+    <!-- Main Body Shape (Curvy like Paper Boat, No Stroke) -->
+    <path d="M110 60 L110 100 C110 100 70 140 70 220 C70 300 80 400 85 500 C88 560 110 580 150 580 C190 580 212 560 215 500 C220 400 230 300 230 220 C230 140 190 100 190 100 L190 60 L110 60 Z" 
+          fill="url(#matteBody)"/>
+
+    <!-- Subtle Side Shadow for Roundness -->
+    <path d="M215 500 C220 400 230 300 230 220 C230 140 190 100 190 100 L190 60 L170 60 C170 100 210 140 210 220 C210 300 200 400 195 500 C192 560 170 580 150 580 C190 580 212 560 215 500 Z" 
+          fill="#00838F" fill-opacity="0.05"/>
+
+    <!-- Left Highlight (Matte Reflection) -->
+    <path d="M110 60 L110 100 C110 100 70 140 70 220 C70 300 80 400 85 500 C88 560 110 580 130 580 C110 580 95 560 95 500 C90 400 85 300 85 220 C85 140 120 100 120 100 L120 60 L110 60 Z" 
+          fill="url(#highlight)"/>
+
+    <!-- Label/Branding Area (Direct print on bottle) -->
+    <g transform="translate(150, 300)">
+        <!-- Logo Drop -->
+        <path d="M0 -30 C-18 -12 -18 12 0 12 C18 12 18 -12 0 -30 Z" fill="#00ACC1"/>
+        <path d="M0 -24 C-12 -10 -12 8 0 8 C12 8 12 -10 0 -24 Z" fill="white" fill-opacity="0.9"/>
+        
+        <!-- Text -->
+        <text x="0" y="35" font-family="sans-serif" font-size="28" text-anchor="middle" fill="#00838F" font-weight="600" letter-spacing="0.5">Gemneer</text>
+        <text x="0" y="52" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#00ACC1" letter-spacing="2" opacity="0.8">PREMIUM HYDRATION</text>
+    </g>
+
+    <!-- Cap -->
+    <rect x="110" y="25" width="80" height="35" rx="4" fill="#00BCD4" />
+    <rect x="110" y="25" width="80" height="35" rx="4" fill="url(#highlight)" opacity="0.3"/>
+    
+    <!-- Cap Ridges -->
+    <line x1="110" y1="52" x2="190" y2="52" stroke="#00838F" stroke-width="1" opacity="0.3"/>
+    <line x1="110" y1="40" x2="190" y2="40" stroke="#00838F" stroke-width="1" opacity="0.2"/>
+</svg>
