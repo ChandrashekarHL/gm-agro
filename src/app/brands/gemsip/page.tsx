@@ -6,79 +6,15 @@ import Link from "next/link";
 import { products } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 import { Droplet, Shield, Sparkles, Heart, Leaf, Apple } from "lucide-react";
+import ProductScroll from "@/components/ProductScroll";
 
 const gemsipProducts = products.filter(p => p.brand === "Gemsip");
 
 export default function GemsipPage() {
     return (
         <div className="bg-white min-h-screen">
-            {/* Immersive Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-400 via-orange-500 to-pink-500 overflow-hidden">
-                {/* Subtle Pattern Overlay */}
-                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
-
-                <div className="container mx-auto px-6 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        {/* Left: Product Showcase */}
-                        <div className="relative">
-                            {/* Large Product Image */}
-                            <div className="relative aspect-[3/4] max-w-md mx-auto">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1589988986885-f7eb429c9db9?q=80&w=1200"
-                                    alt="Gemsip Mango Juice"
-                                    fill
-                                    className="object-contain drop-shadow-2xl"
-                                    priority
-                                />
-                            </div>
-                        </div>
-
-                        {/* Right: Content */}
-                        <div className="text-white space-y-8">
-                            <div>
-                                <p className="text-sm uppercase tracking-[0.3em] mb-4 opacity-90">Gemsip Juices</p>
-                                <h1 className="font-serif text-6xl md:text-7xl mb-6 leading-tight">
-                                    Pure Mango<br />Perfection
-                                </h1>
-                                <p className="text-xl opacity-90 leading-relaxed mb-8">
-                                    Made from 100% real Alphonso mangoes. No water added, no preservatives, just pure fruit goodness in every sip.
-                                </p>
-                            </div>
-
-                            {/* Quick Features */}
-                            <div className="grid grid-cols-3 gap-6 py-8 border-y border-white/20">
-                                <div>
-                                    <p className="text-4xl font-bold mb-1">100%</p>
-                                    <p className="text-sm opacity-80 uppercase tracking-wide">Real Fruit</p>
-                                </div>
-                                <div>
-                                    <p className="text-4xl font-bold mb-1">0g</p>
-                                    <p className="text-sm opacity-80 uppercase tracking-wide">Added Sugar</p>
-                                </div>
-                                <div>
-                                    <p className="text-4xl font-bold mb-1">Vitamin C</p>
-                                    <p className="text-sm opacity-80 uppercase tracking-wide">Rich Source</p>
-                                </div>
-                            </div>
-
-                            <div className="flex gap-4">
-                                <Button size="lg" className="bg-white text-orange-600 hover:bg-cream font-bold">
-                                    Shop Now
-                                </Button>
-                                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 font-bold">
-                                    View All Flavors
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
-                    <p className="text-xs uppercase tracking-widest mb-2">Scroll</p>
-                    <div className="w-px h-12 bg-white/40 mx-auto" />
-                </div>
-            </section>
+            {/* Scrollytelling Hero */}
+            <ProductScroll />
 
             {/* Available Sizes Section */}
             <section className="py-32 bg-cream">

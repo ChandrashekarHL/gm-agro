@@ -5,193 +5,194 @@ import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
-import { Droplet, Zap, Sparkles, Star } from "lucide-react";
+import { Droplet, Zap, Sparkles, Star, ChevronRight, ArrowRight } from "lucide-react";
+import FizzHero from "@/components/FizzHero";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { LemonSlice, OrangeZest, AbstractBlob, StarBurst } from "@/components/EditorialAssets";
+
 
 const gembergProducts = products.filter(p => p.brand === "Gemberg");
 
 export default function GembergPage() {
     return (
         <div className="bg-white min-h-screen">
-            {/* Immersive Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-600 via-orange-700 to-amber-800 overflow-hidden">
-                {/* Bubbles Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                    {[...Array(20)].map((_, i) => (
-                        <div
-                            key={i}
-                            className="absolute rounded-full bg-white"
-                            style={{
-                                width: `${Math.random() * 100 + 20}px`,
-                                height: `${Math.random() * 100 + 20}px`,
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                animation: `float ${Math.random() * 3 + 3}s ease-in-out infinite`,
-                                animationDelay: `${Math.random() * 2}s`
-                            }}
-                        />
-                    ))}
+            {/* Creative Parallax Hero */}
+            <FizzHero />
+
+            {/* Flavors Section: Editorial Splash (Refined) */}
+            <section className="relative py-12 md:py-20 overflow-hidden bg-white">
+
+                {/* Giant Typography Background */}
+                <div className="absolute inset-0 pointer-events-none select-none overflow-hidden h-full">
+                    <motion.div
+                        initial={{ x: -100, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 0.1 }}
+                        transition={{ duration: 1 }}
+                        className="absolute top-10 -left-10 font-serif text-[10rem] md:text-[18rem] text-orange-900 leading-none opacity-5 rotate-[-10deg] whitespace-nowrap z-0"
+                    >
+                        FIZZ
+                    </motion.div>
+                    <motion.div
+                        initial={{ x: 100, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 0.1 }}
+                        transition={{ duration: 1 }}
+                        className="absolute bottom-10 -right-10 font-serif text-[10rem] md:text-[18rem] text-yellow-500 leading-none opacity-5 rotate-[5deg] whitespace-nowrap z-0"
+                    >
+                        POP.
+                    </motion.div>
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        {/* Left: Product Showcase */}
-                        <div className="relative">
-                            <div className="relative aspect-[3/4] max-w-md mx-auto">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1581006663862-8c4d6c4f8c4e?q=80&w=1200"
-                                    alt="Gemberg Carbonated Drink"
-                                    fill
-                                    className="object-contain drop-shadow-2xl"
-                                    priority
-                                />
-                            </div>
-                        </div>
-
-                        {/* Right: Content */}
-                        <div className="text-white space-y-8">
-                            <div>
-                                <p className="text-sm uppercase tracking-[0.3em] mb-4 opacity-90">Gemberg Fizz</p>
-                                <h1 className="font-serif text-6xl md:text-7xl mb-6 leading-tight">
-                                    The Fizz with<br />Real Fruit
-                                </h1>
-                                <p className="text-xl opacity-90 leading-relaxed mb-8">
-                                    India's first carbonated drink with 5% real fruit pulp. The perfect blend of fizz and fruit that refreshes like nothing else.
-                                </p>
-                            </div>
-
-                            {/* Highlight Box */}
-                            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-                                <p className="text-6xl font-bold mb-2">5%</p>
-                                <p className="text-lg opacity-90">Real Fruit Pulp in Every Sip</p>
-                            </div>
-
-                            <div className="flex gap-4">
-                                <Button size="lg" className="bg-white text-orange-700 hover:bg-cream font-bold">
-                                    Shop Now
-                                </Button>
-                                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 font-bold">
-                                    Explore Flavors
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
-                    <p className="text-xs uppercase tracking-widest mb-2">Scroll</p>
-                    <div className="w-px h-12 bg-white/40 mx-auto" />
-                </div>
-            </section>
-
-            {/* Flavors Section */}
-            <section className="py-32 bg-cream">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-20">
-                        <p className="text-secondary font-bold uppercase tracking-[0.2em] mb-4">Gemberg Range</p>
-                        <h2 className="font-serif text-5xl md:text-6xl text-primary mb-6">Choose Your Fizz</h2>
-                        <p className="text-xl text-primary/60 max-w-2xl mx-auto">
-                            From classic cola to zesty lemon, each bottle is packed with real fruit pulp and fizz.
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="text-center mb-12">
+                        <motion.h2
+                            initial={{ y: 30, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            className="font-serif text-5xl md:text-7xl text-slate-900 mb-4 relative inline-block"
+                        >
+                            Gemberg <span className="italic text-orange-600">Rising.</span>
+                            <StarBurst className="absolute -top-6 -right-6 w-12 h-12 text-yellow-400 animate-spin-slow opacity-80" />
+                        </motion.h2>
+                        <p className="text-lg text-slate-500 max-w-xl mx-auto font-light">
+                            A chaotic symphony of fruit and bubbles.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-                        {gembergProducts.map((product) => (
-                            <Link
-                                key={product.id}
-                                href={`/products/${product.id}`}
-                                className="group text-center"
-                            >
-                                <div className="relative aspect-[3/4] mb-6 bg-white rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                                    <Image
-                                        src={product.image}
-                                        alt={product.name}
-                                        fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                    />
-                                </div>
-                                <h3 className="font-serif text-2xl text-primary mb-2 group-hover:text-secondary transition-colors">
-                                    {product.name}
-                                </h3>
-                                <p className="text-primary/60 mb-4">{product.description}</p>
-                                <p className="text-2xl font-bold text-secondary">{product.price}</p>
-                            </Link>
-                        ))}
+                    {/* Staggered Grid Layout (No Overlap) */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 max-w-7xl mx-auto">
+
+                        {gembergProducts.map((product, index) => {
+                            // Stagger effect using margin-top logic (simulated by flex/grid placement or transform)
+                            const isEven = index % 2 === 0;
+                            const rotateVal = index % 2 === 0 ? -3 : 3;
+                            const yOffset = (index % 3) * 40; // 0px, 40px, 80px staggered down
+
+                            return (
+                                <Link key={product.id} href={`/products/${product.id}`} className="block">
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 50 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        whileHover={{ scale: 1.05, rotate: 0 }}
+                                        transition={{ type: "spring", stiffness: 100, delay: index * 0.1 }}
+                                        className="relative flex flex-col items-center group w-full"
+                                        style={{ marginTop: `${index % 3 === 0 ? 0 : (index % 3) * 3}rem` }} // Stagger via margin on large screens
+                                    >
+                                        {/* Abstract Shape Behind */}
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] md:w-[280px] md:h-[280px] -z-10 group-hover:scale-110 transition-transform duration-500">
+                                            {index % 3 === 0 && <AbstractBlob className="text-orange-100 w-full h-full rotate-45" />}
+                                            {index % 3 === 1 && <LemonSlice className="text-yellow-100 w-full h-full animate-pulse-slow" />}
+                                            {index % 3 === 2 && <OrangeZest className="text-red-50 w-full h-full rotate-90" />}
+                                        </div>
+
+                                        {/* Product Image */}
+                                        <div className="relative w-40 md:w-56 aspect-[1/2.5] mb-4 drop-shadow-xl transform transition-transform duration-300 group-hover:-translate-y-2">
+                                            <Image
+                                                src={product.image}
+                                                alt={product.name}
+                                                fill
+                                                className="object-contain"
+                                            />
+                                        </div>
+
+                                        {/* Huge Overlay Typography for Name (Behind/Blend) */}
+                                        <h3 className="font-serif text-4xl md:text-6xl text-slate-900/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none whitespace-nowrap z-0 scale-150 group-hover:scale-125 transition-transform duration-500 uppercase tracking-tighter">
+                                            {// Show part of name like "LEMON", "ORANGE", "COLA"
+                                                product.name.split(" ")[0].substring(0, 5)
+                                            }
+                                        </h3>
+
+                                        {/* Minimal Label below */}
+                                        <div className="text-center bg-white/95 backdrop-blur-sm px-6 py-2 rounded-full shadow-sm border border-slate-100 mt-2 z-20 relative">
+                                            <p className="font-bold text-slate-900 uppercase tracking-widest text-xs md:text-sm">{product.name}</p>
+                                        </div>
+
+                                    </motion.div>
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
 
-            {/* The Gemberg Difference */}
-            <section className="py-32 bg-white">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-20">
-                        <p className="text-secondary font-bold uppercase tracking-[0.2em] mb-4">What Makes Us Different</p>
-                        <h2 className="font-serif text-5xl md:text-6xl text-primary mb-6">
-                            The Gemberg Difference
-                        </h2>
-                    </div>
+            {/* The Gemberg Difference: Glassmorphism on Gradient */}
+            <section className="py-32 bg-gradient-to-br from-orange-600 via-red-500 to-pink-600 text-white relative overflow-hidden">
+                {/* Animated Gradient Overlay */}
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto">
-                        <div className="text-center">
-                            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <Droplet className="w-10 h-10 text-orange-600" />
-                            </div>
-                            <h3 className="font-serif text-2xl text-primary mb-3">5% Real Pulp</h3>
-                            <p className="text-primary/60">
-                                Actual fruit pulp in every bottle, not just flavor
+                <div className="container mx-auto px-6 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <p className="text-orange-200 font-bold uppercase tracking-[0.2em] mb-4">Why We Fizz</p>
+                            <h2 className="font-serif text-5xl md:text-7xl mb-8 leading-none">
+                                Not Just<br />Another Soda.
+                            </h2>
+                            <p className="text-xl text-orange-100/90 leading-relaxed mb-10 max-w-md">
+                                Most sodas are just sugar and water. Gemberg is different. We blend the fun of fizz with the goodness of real fruit pulp.
                             </p>
-                        </div>
+                            <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50 font-bold rounded-full px-8 py-6">
+                                The Gemberg Story
+                            </Button>
+                        </motion.div>
 
-                        <div className="text-center">
-                            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <Zap className="w-10 h-10 text-orange-600" />
-                            </div>
-                            <h3 className="font-serif text-2xl text-primary mb-3">Perfect Fizz</h3>
-                            <p className="text-primary/60">
-                                Perfectly carbonated for that refreshing burst
-                            </p>
-                        </div>
-
-                        <div className="text-center">
-                            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <Sparkles className="w-10 h-10 text-orange-600" />
-                            </div>
-                            <h3 className="font-serif text-2xl text-primary mb-3">Great Taste</h3>
-                            <p className="text-primary/60">
-                                Unique flavor that's loved by millions
-                            </p>
-                        </div>
-
-                        <div className="text-center">
-                            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <Star className="w-10 h-10 text-orange-600" />
-                            </div>
-                            <h3 className="font-serif text-2xl text-primary mb-3">Since 1958</h3>
-                            <p className="text-primary/60">
-                                Decades of trust and quality in every bottle
-                            </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            {[
+                                { icon: Droplet, title: "5% Real Pulp", desc: "You can see it. You can taste it." },
+                                { icon: Zap, title: "Perfect Fizz", desc: "Engineered for maximum refreshment." },
+                                { icon: Sparkles, title: "Bold Flavor", desc: "Recipes perfected for decades." },
+                                { icon: Star, title: "Since 1958", desc: "A legacy of trust & quality." },
+                            ].map((feature, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2 + (i * 0.1) }}
+                                    whileHover={{ y: -5, backgroundColor: "rgba(255,255,255,0.15)" }}
+                                    className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl"
+                                >
+                                    <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
+                                        <feature.icon className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="font-serif text-xl font-bold mb-2">{feature.title}</h3>
+                                    <p className="text-sm text-white/70 leading-relaxed">{feature.desc}</p>
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="py-32 bg-gradient-to-br from-orange-600 to-amber-700 text-white">
-                <div className="container mx-auto px-6 text-center">
-                    <h2 className="font-serif text-5xl md:text-6xl mb-8">
-                        Feel the Real Fizz
-                    </h2>
-                    <p className="text-xl opacity-90 mb-12 max-w-2xl mx-auto">
-                        Experience the unique taste of carbonated refreshment with real fruit pulp
+            {/* CTA Section: High Energy */}
+            <section className="py-40 bg-slate-900 relative overflow-hidden text-center">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-slate-900 to-slate-900 z-10"></div>
+                {/* Glow behind logo area */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-600/20 rounded-full blur-[120px]"></div>
+
+                <div className="container mx-auto px-6 relative z-20">
+                    <motion.h2
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ type: "spring", stiffness: 100 }}
+                        viewport={{ once: true }}
+                        className="font-serif text-6xl md:text-9xl text-white mb-8"
+                    >
+                        Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-300">Fizz?</span>
+                    </motion.h2>
+                    <p className="text-slate-400 text-xl md:text-2xl mb-12 max-w-2xl mx-auto">
+                        Join the revolution of fruit-filled refreshment.
                     </p>
-                    <div className="flex gap-6 justify-center flex-wrap">
-                        <Button size="lg" className="bg-white text-orange-700 hover:bg-cream font-bold px-8">
-                            Find in Stores
+                    <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-block"
+                    >
+                        <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold text-xl px-12 py-8 rounded-full shadow-[0_0_40px_rgba(255,69,0,0.5)] hover:shadow-[0_0_60px_rgba(255,69,0,0.7)] border-none transition-all">
+                            Find Nearest Store <ArrowRight className="ml-2 w-6 h-6" />
                         </Button>
-                        <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 font-bold px-8">
-                            Contact Us
-                        </Button>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
         </div>

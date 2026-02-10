@@ -36,7 +36,7 @@ export const products = [
         category: "Carbonated Drinks",
         description: "A sparkling lemon refresher with a dew-fresh zesty kick.",
         price: "₹20",
-        image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=2670&auto=format&fit=crop"
+        image: "/product image gem berg/download-2026-02-10T11_15_09.png"
     },
     {
         id: "gemberg-misty-lemon",
@@ -45,7 +45,7 @@ export const products = [
         category: "Carbonated Drinks",
         description: "Cloudy lemon drink with real fruit pulp and perfect fizz.",
         price: "₹20",
-        image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=2670&auto=format&fit=crop"
+        image: "/product image gem berg/download-2026-02-10T11_16_38.png"
     },
     {
         id: "gemberg-classic-cola",
@@ -54,7 +54,7 @@ export const products = [
         category: "Carbonated Drinks",
         description: "The timeless taste of cola, crafted for ultimate refreshment.",
         price: "₹20",
-        image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=2670&auto=format&fit=crop"
+        image: "/product image gem berg/download-2026-02-10T11_17_30.png"
     },
     {
         id: "gemberg-orange-crush",
@@ -63,7 +63,7 @@ export const products = [
         category: "Carbonated Drinks",
         description: "Tangy orange goodness that crushes your thirst instantly.",
         price: "₹20",
-        image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?q=80&w=2574&auto=format&fit=crop"
+        image: "/product image gem berg/download-2026-02-10T11_20_13.png"
     },
     {
         id: "gemberg-nimbu-masala",
@@ -72,7 +72,7 @@ export const products = [
         category: "Carbonated Drinks",
         description: "Indian-style spiced lemon soda, tangy and chatpata.",
         price: "₹20",
-        image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=2670&auto=format&fit=crop"
+        image: "/product image gem berg/download-2026-02-10T11_20_40.png"
     },
     {
         id: "gemberg-soda",
@@ -81,7 +81,7 @@ export const products = [
         category: "Carbonated Drinks",
         description: "Extra strong soda for the perfect mix or solo sip.",
         price: "₹15",
-        image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=2670&auto=format&fit=crop" // Soda placeholder
+        image: "/product image gem berg/download-2026-02-10T11_21_12.png"
     },
 
     // --- GEMJEERA ---
@@ -92,7 +92,7 @@ export const products = [
         category: "Carbonated Drinks",
         description: "Traditional digestive jeera drink with a sparkling twist.",
         price: "₹20",
-        image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2670&auto=format&fit=crop"
+        image: "/Product Shot-gem jeera.png"
     },
 
     // --- GEMNEER (Water) ---
